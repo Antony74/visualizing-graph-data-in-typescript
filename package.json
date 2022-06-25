@@ -1,0 +1,31 @@
+{
+  "name": "working-with-graph-data-in-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "graphviz": "ts-node graphvizExample.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antony74/working-with-graph-data-in-typescript.git"
+  },
+  "author": "Antony74",
+  "license": "MIT",
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "arrowParens": "avoid"
+  },
+  "dependencies": {
+    "@types/graphviz": "^0.0.34",
+    "@types/node": "^18.0.0",
+    "graphviz": "^0.0.9",
+    "node-graphviz": "^0.1.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4",
+    "xstate": "^4.32.1"
+  }
+}

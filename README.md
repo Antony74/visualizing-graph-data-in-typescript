@@ -25,3 +25,7 @@ xstate is a well known package for doing state machines on a JavaScript platform
 A state machine is slightly more than a directed graph, but these extra constraints can be ignored so far as the visualizer is concerned.
 
 Example output:
+
+## Further examples wanted
+
+If I've missed any good ways of visualizing graph data in TypeScript, please open an issue or PR and let me know.  Packages containing useful datatypes and algorithms for working with graph data would also be of interest.

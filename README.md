@@ -20,11 +20,15 @@ Example output:
 
 ## XState
 
-xstate is a well known package for doing state machines on a JavaScript platform, typically used with React.
+xstate is a well known package for doing state machines on a JavaScript platform, typically used with React.  A state machine is slightly more than a directed graph, but a lot of the tooling is the same.  It is written in TypeScript.
 
-A state machine is slightly more than a directed graph, but these extra constraints can be ignored so far as the visualizer is concerned.
+The big disadvantage with XState is that its visualizer is not available in an npm package, only from a website https://stately.ai/registry/new?source=landing-page
+
+It's an excellent visualizer with interactive editor, and you can paste code into it, such as the example given in this repo.  The output is good, the link labels are good.  It does try to warn us that our example directed graph doesn't quite work as a state machine.
 
 Example output:
+
+![](src/xstateExample.png)
 
 ## Further examples wanted
 

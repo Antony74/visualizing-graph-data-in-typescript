@@ -2,7 +2,7 @@
   "name": "working-with-graph-data-in-typescript",
   "version": "1.0.0",
   "scripts": {
-    "graphviz": "ts-node graphvizExample.ts"
+    "graphviz": "ts-node src/graphvizExample.ts"
   },
   "repository": {
     "type": "git",

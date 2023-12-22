@@ -1,31 +1,33 @@
 {
-  "name": "visualizing-graph-data-in-typescript",
-  "version": "1.0.0",
-  "scripts": {
-    "graphviz": "ts-node src/graphvizExample.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Antony74/visualizing-graph-data-in-typescript.git"
-  },
-  "author": "Antony74",
-  "license": "MIT",
-  "prettier": {
-    "semi": true,
-    "singleQuote": true,
-    "printWidth": 120,
-    "tabWidth": 4,
-    "trailingComma": "all",
-    "arrowParens": "avoid"
-  },
-  "dependencies": {
-    "@types/graphviz": "^0.0.34",
-    "@types/node": "^18.0.0",
-    "graphviz": "^0.0.9",
-    "node-graphviz": "^0.1.1",
-    "prettier": "^2.7.1",
-    "ts-node": "^10.8.1",
-    "typescript": "^4.7.4",
-    "xstate": "^4.32.1"
-  }
+    "name": "visualizing-graph-data-in-typescript",
+    "version": "1.0.0",
+    "scripts": {
+        "elkSprotty": "ts-node src/elkSprottyExample.ts",
+        "graphviz": "ts-node src/graphvizExample.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Antony74/visualizing-graph-data-in-typescript.git"
+    },
+    "author": "Antony74",
+    "license": "MIT",
+    "prettier": {
+        "semi": true,
+        "singleQuote": true,
+        "printWidth": 120,
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "arrowParens": "avoid"
+    },
+    "dependencies": {
+        "@types/graphviz": "^0.0.34",
+        "@types/node": "^18.0.0",
+        "elkjs": "^0.8.2",
+        "graphviz": "^0.0.9",
+        "node-graphviz": "^0.1.1",
+        "prettier": "^2.7.1",
+        "ts-node": "^10.8.1",
+        "typescript": "^4.7.4",
+        "xstate": "^4.32.1"
+    }
 }

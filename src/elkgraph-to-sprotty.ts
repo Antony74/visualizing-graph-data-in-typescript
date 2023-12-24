@@ -15,9 +15,21 @@ import {
     ElkEdgeSection,
     ElkPrimitiveEdge,
     ElkGraphElement,
-    isPrimitive,
-    isExtended,
-} from './elkgraph-json';
+} from 'elkjs';
+
+export function isPrimitive(edge: ElkEdge): edge is ElkPrimitiveEdge {
+    return (edge as ElkPrimitiveEdge).source !== undefined && (edge as ElkPrimitiveEdge).target !== undefined;
+}
+
+export interface ElkExtendedEdge extends ElkEdge {
+    sources: string[]
+    targets: string[]
+    sections: ElkEdgeSection[]
+}
+
+export function isExtended(edge: ElkEdge): edge is ElkExtendedEdge {
+    return (edge as ElkExtendedEdge).sources !== undefined && (edge as ElkExtendedEdge).targets !== undefined;
+}
 
 export class ElkGraphJsonToSprotty {
     private nodeIds: Set<string> = new Set();

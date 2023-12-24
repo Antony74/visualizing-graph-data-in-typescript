@@ -21,7 +21,7 @@ const main = async () => {
     const laidOutGraph = await elk.layout(graph);
 
     const elkToSprotty = new ElkGraphJsonToSprotty();
-    const output = elkToSprotty.transform(laidOutGraph as any);
+    const output = elkToSprotty.transform(laidOutGraph);
 
     console.log(output);
 };

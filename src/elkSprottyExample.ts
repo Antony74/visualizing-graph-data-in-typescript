@@ -1,4 +1,5 @@
 import Elk from 'elkjs';
+import { ElkGraphJsonToSprotty } from './elkgraph-to-sprotty';
 
 const main = async () => {
     const elk = new Elk();
@@ -19,7 +20,10 @@ const main = async () => {
 
     const laidOutGraph = await elk.layout(graph);
 
-    console.log(laidOutGraph);
+    const elkToSprotty = new ElkGraphJsonToSprotty();
+    const output = elkToSprotty.transform(laidOutGraph as any);
+
+    console.log(output);
 };
 
 main();

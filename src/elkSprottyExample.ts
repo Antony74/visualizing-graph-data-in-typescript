@@ -1,5 +1,7 @@
 import Elk from 'elkjs';
 import { ElkGraphJsonToSprotty } from './elkgraph-to-sprotty';
+import { createContainer } from './di.config';
+import { LocalModelSource, TYPES } from 'sprotty1.0.0';
 
 const main = async () => {
     const elk = new Elk();
@@ -21,9 +23,12 @@ const main = async () => {
     const laidOutGraph = await elk.layout(graph);
 
     const elkToSprotty = new ElkGraphJsonToSprotty();
-    const output = elkToSprotty.transform(laidOutGraph);
+    const model = elkToSprotty.transform(laidOutGraph);
 
-    console.log(output);
+    const container = createContainer('blah');
+    const modelSource = container.get<LocalModelSource>(TYPES.ModelSource);
+    await modelSource.setModel(model);
+    console.log('blah');
 };
 
 main();

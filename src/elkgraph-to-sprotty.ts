@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-import { SNodeSchema, SEdgeSchema, SPortSchema, SLabelSchema, SGraphSchema, Point, Dimension } from 'sprotty';
+import { SNodeSchema, SEdgeSchema, SPortSchema, SLabelSchema, SGraphSchema, Point, Dimension } from 'sprotty0.8.0';
 import {
     ElkShape,
     ElkNode,
@@ -22,9 +22,9 @@ export function isPrimitive(edge: ElkEdge): edge is ElkPrimitiveEdge {
 }
 
 export interface ElkExtendedEdge extends ElkEdge {
-    sources: string[]
-    targets: string[]
-    sections: ElkEdgeSection[]
+    sources: string[];
+    targets: string[];
+    sections: ElkEdgeSection[];
 }
 
 export function isExtended(edge: ElkEdge): edge is ElkExtendedEdge {

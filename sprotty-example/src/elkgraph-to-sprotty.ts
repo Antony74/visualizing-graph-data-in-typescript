@@ -5,7 +5,8 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-import { SNodeSchema, SEdgeSchema, SPortSchema, SLabelSchema, SGraphSchema, Point, Dimension } from 'sprotty0.8.0';
+import { SNode, SEdge, SPort, SLabel, SGraph, Point, Dimension } from 'sprotty-protocol';
+
 import {
     ElkShape,
     ElkNode,
@@ -38,8 +39,8 @@ export class ElkGraphJsonToSprotty {
     private labelIds: Set<string> = new Set();
     private sectionIds: Set<string> = new Set();
 
-    public transform(elkGraph: ElkNode): SGraphSchema {
-        const sGraph = <SGraphSchema>{
+    public transform(elkGraph: ElkNode): SGraph {
+        const sGraph: SGraph = {
             type: 'graph',
             id: elkGraph.id || 'root',
             children: [],
@@ -57,10 +58,10 @@ export class ElkGraphJsonToSprotty {
         return sGraph;
     }
 
-    private transformElkNode(elkNode: ElkNode): SNodeSchema {
+    private transformElkNode(elkNode: ElkNode): SNode {
         this.checkAndRememberId(elkNode, this.nodeIds);
 
-        const sNode = <SNodeSchema>{
+        const sNode: SNode = {
             type: 'node',
             id: elkNode.id,
             position: this.pos(elkNode),
@@ -90,10 +91,10 @@ export class ElkGraphJsonToSprotty {
         return sNode;
     }
 
-    private transformElkPort(elkPort: ElkPort): SPortSchema {
+    private transformElkPort(elkPort: ElkPort): SPort {
         this.checkAndRememberId(elkPort, this.portIds);
 
-        const sPort = <SPortSchema>{
+        const sPort: SPort = {
             type: 'port',
             id: elkPort.id,
             position: this.pos(elkPort),
@@ -108,15 +109,15 @@ export class ElkGraphJsonToSprotty {
         return sPort;
     }
 
-    private transformElkLabel(elkLabel: ElkLabel): SLabelSchema {
+    private transformElkLabel(elkLabel: ElkLabel): SLabel {
         // For convenience, and since labels do not have to be referenced by other elements,
         // we allow their ids to be generated on-the-fly
         this.checkAndRememberId(elkLabel, this.labelIds, true);
 
-        return <SLabelSchema>{
+        return {
             type: 'label',
-            id: elkLabel.id,
-            text: elkLabel.text,
+            id: elkLabel.id ?? '',
+            text: elkLabel.text ?? '',
             position: this.pos(elkLabel),
             size: this.size(elkLabel),
         };
@@ -131,7 +132,7 @@ export class ElkGraphJsonToSprotty {
         return (elkEdge as any).sections !== undefined && (elkEdge as any).sections.length > 0;
     }
 
-    private transferSectionBendpoints(section: ElkEdgeSection, sEdge: SEdgeSchema) {
+    private transferSectionBendpoints(section: ElkEdgeSection, sEdge: SEdge) {
         this.checkAndRememberId(section, this.sectionIds);
         sEdge.routingPoints!.push(section.startPoint);
         if (section.bendPoints) {
@@ -140,10 +141,10 @@ export class ElkGraphJsonToSprotty {
         sEdge.routingPoints!.push(section.endPoint);
     }
 
-    private transformElkEdge(elkEdge: ElkEdge): SEdgeSchema {
+    private transformElkEdge(elkEdge: ElkEdge): SEdge {
         this.checkAndRememberId(elkEdge, this.edgeIds);
 
-        const sEdge = <SEdgeSchema>{
+        const sEdge = <SEdge>{
             type: 'edge',
             id: elkEdge.id,
             sourceId: '',
@@ -172,7 +173,7 @@ export class ElkGraphJsonToSprotty {
         }
         if (elkEdge.junctionPoints) {
             elkEdge.junctionPoints.forEach((jp, i) => {
-                const sJunction = <SNodeSchema>{
+                const sJunction = <SNode>{
                     type: 'junction',
                     id: elkEdge.id + '_j' + i,
                     position: jp,

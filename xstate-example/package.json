@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "author": "Antony74",
     "license": "MIT",
-    "dependencies": {
+    "devDependencies": {
         "xstate": "^4.32.1"
     },
     "prettier": {

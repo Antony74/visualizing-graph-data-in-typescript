@@ -27,8 +27,9 @@ const main = async () => {
 
     const container = createContainer('blah');
     const modelSource = container.get<LocalModelSource>(TYPES.ModelSource);
+    console.log('Setting model')
     await modelSource.setModel(model);
-    console.log('blah');
+    console.log('Model set');
 };
 
 main();

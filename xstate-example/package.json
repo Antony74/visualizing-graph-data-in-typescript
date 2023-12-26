@@ -5,5 +5,9 @@
     "license": "MIT",
     "dependencies": {
         "xstate": "^4.32.1"
+    },
+    "prettier": {
+        "singleQuote": true,
+        "tabWidth": 4
     }
 }

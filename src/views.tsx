@@ -1,6 +1,6 @@
 import React from 'react';
 import { injectable } from 'inversify';
-import { IView, RenderingContext, SNode } from 'sprotty0.8.0';
+import { IView } from 'sprotty1.0.0';
 //import { TaskNode } from './models';
 
 @injectable()

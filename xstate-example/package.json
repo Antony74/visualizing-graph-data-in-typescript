@@ -1,0 +1,9 @@
+{
+    "name": "xstate-example",
+    "version": "1.0.0",
+    "author": "Antony74",
+    "license": "MIT",
+    "dependencies": {
+        "xstate": "^4.32.1"
+    }
+}

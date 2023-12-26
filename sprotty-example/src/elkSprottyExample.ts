@@ -1,7 +1,7 @@
 import Elk from 'elkjs';
 import { ElkGraphJsonToSprotty } from './elkgraph-to-sprotty';
 import { createContainer } from './di.config';
-import { LocalModelSource, TYPES } from 'sprotty1.0.0';
+import { LocalModelSource, TYPES } from 'sprotty';
 
 const main = async () => {
     const elk = new Elk();

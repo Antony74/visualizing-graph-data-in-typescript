@@ -11,7 +11,7 @@ import {
     SGraphView,
     SNodeImpl,
     TYPES,
-} from 'sprotty1.0.0';
+} from 'sprotty';
 import { TaskNodeView } from './views';
 
 export const createContainer = (containerId: string) => {

@@ -16,7 +16,7 @@ The link labels just hang in space.  In a complex graph this is both ugly and ha
 
 Example output:
 
-![](src/graphvizExample.svg)
+![](graphviz-example/src/graphvizExample.svg)
 
 ## XState
 
@@ -28,8 +28,8 @@ It's an excellent visualizer with interactive editor, and you can paste code int
 
 Example output:
 
-![](src/xstateExample.png)
+![](xstate-example/src/xstateExample.png)
 
 ## Further examples wanted
 
-If I've missed any good ways of visualizing graph data in TypeScript, please open an issue or PR and let me know.  Packages containing useful datatypes and algorithms for working with graph data would also be of interest.
+If I've missed any good ways of visualizing graph data in TypeScript, please open an issue or PR and let me know.  Packages containing useful data-types and algorithms for working with graph data would also be of interest.
